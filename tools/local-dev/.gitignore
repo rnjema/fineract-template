@@ -1,0 +1,6 @@
+.env.local
+.runtime/
+
+
+__pycache__/
+*.pyc
