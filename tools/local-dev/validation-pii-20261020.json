@@ -1,0 +1,60 @@
+{
+  "version": "pii-workbench-v1",
+  "as_of": "2026-10-20",
+  "clients": 100,
+  "profile_counts": {
+    "regional": 80,
+    "global": 20
+  },
+  "loans": 30,
+  "scenario_counts": {
+    "on-time": 10,
+    "late": 10,
+    "partial": 6,
+    "approved-undisbursed": 4
+  },
+  "disbursements": 26,
+  "repayments": 66,
+  "transaction_notes": 92,
+  "repayment_total_usd": "6150.00",
+  "disbursed_principal_usd": "15600.00",
+  "client_notes": 100,
+  "loan_notes": 30,
+  "contact_datatables": 100,
+  "verified_occurrences": 3726,
+  "coverage_by_type": {
+    "person_name": 1304,
+    "phone": 974,
+    "date_of_birth": 200,
+    "source_identifier": 100,
+    "account_identifier": 100,
+    "email": 574,
+    "national_id": 474
+  },
+  "raw_extraction_records": 722,
+  "file_only_stress_cases": 5,
+  "original_source_checksums_unchanged": true,
+  "backup_restored_and_verified": true,
+  "pipeline_privacy_evaluation": "not evaluated; this prepares test inputs and a withheld answer key",
+  "limitations": [
+    "business/contact fields use registered fixture datatable, not native business/address tables",
+    "national IDs use explicit fictional TST format; phone validity/unassigned status not certified",
+    "source outcome observations and synthetic loan histories must not be conflated",
+    "native multi-tenancy and production parity remain unverified"
+  ],
+  "repeat_execution": {
+    "new_records": 0,
+    "pending_commands": 0,
+    "all_counted_tables_unchanged": true
+  },
+  "harness_self_check": {
+    "known_identifiers_checked": 892,
+    "raw_input_identifiers_found": 892,
+    "identifier_free_control_found": 0,
+    "principal_controls_matched": 30,
+    "actual_pipeline_tested": false
+  },
+  "focused_tests_passed": 9,
+  "local_compatibility_correction": "Added nullable m_loan.office_id and office FK on originally empty loan table; no core ledger rows directly written and no Liquibase history changed",
+  "email_hook": "Preserved privately and disabled before fixture mutations"
+}

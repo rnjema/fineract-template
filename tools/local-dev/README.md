@@ -55,3 +55,9 @@ docker compose --project-name capstone-fineract-local --env-file .env.local -f c
 ```
 
 This preserves the database. Do not add destructive volume-removal flags. Do not run the fork's production workflows or data-correction scripts for local startup. Existing source/build/CI changes outside this profile are intentionally excluded from the local-setup commit.
+
+## Source staging and synthetic PII fixtures (20 October 2026)
+
+The approved workbench now contains the source-based 100-client cohort and a synthetic identity/loan overlay. See [Synthetic_PII_Testbed_Runbook.md](Synthetic_PII_Testbed_Runbook.md) for current counts, guided Faker generation, backup/restore verification, loan-schema compatibility, repeat execution and a private evaluation answer key. [Anonymized_Data_Seed_Runbook.md](Anonymized_Data_Seed_Runbook.md) documents the initial source load; it should not overwrite the later PII overlay. Startup commands above do not themselves seed data.
+
+The executed fixture state currently lives at `D:\GradSchool\CMU\04950 - Engineering AI Capstone\docs\engineering\local-fineract\.runtime\pii-testbed`, alongside the executed tooling. This commit contains reusable public source only. Run verify/replay from that original directory for this running instance. When transferring the instance, preserve the matching private state/configuration separately; a newly cloned tools directory cannot safely resume by guessing missing before-images or command history. For a new source-based demo, install the pinned Faker dependency in this directory's ignored `.runtime/pii-deps` and follow the fixture runbook. Source CSVs, generated identities, backups and the answer key are excluded from Git.
