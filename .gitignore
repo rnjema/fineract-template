@@ -33,3 +33,7 @@ fineract-provider/src/main/resources/application-local.properties
 data/server-mysql/
 signoz/agent/opentelemetry-javaagent.jar
 signoz/clickhouse/user_scripts/histogramQuantile
+
+# Local JVM diagnostics may contain private runtime details.
+hs_err_pid*.log
+replay_pid*.log
