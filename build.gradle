@@ -103,13 +103,6 @@ copy {
     into pentahoReportPostgrestDir
 }
 
-def ff4jConfigDir = System.properties['user.home'] + System.properties['file.separator'] + '.fineract' + System.properties['file.separator'] + 'ff4j'
-copy {
-    from "fineract-provider/ff4j"
-    into ff4jConfigDir
-}
-
-
 allprojects  {
     group = 'org.apache.fineract'
 
@@ -195,7 +188,6 @@ allprojects  {
             "**/banner.txt",
             "**/build.gradle.mustache",
             "**/pom.mustache",
-            "**/io/fiter/ff4j/**",
             '**/*.properties',
             '**/*.js'
         ])

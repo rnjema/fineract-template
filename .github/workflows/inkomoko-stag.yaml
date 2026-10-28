@@ -55,13 +55,10 @@ jobs:
           DESTINATION_DIR=/home/mifosstaging/fineract_inkomoko/fineract/
           PENTAHO_FILE_SOURCE=./fineract-provider/pentahoReports/
           PENTAHO_FILE_DESTINATION=/home/mifosstaging/fineract_inkomoko/fineract/pentaho/
-          FF4J_FILE_SOURCE=./fineract-provider/ff4j/
-          FF4J_FILE_DESTINATION=/home/mifosstaging/fineract_inkomoko/fineract/ff4j/
           echo "${{ secrets.VM_KEY_STAG }}" > key.pem
           chmod 400 key.pem
           scp -i key.pem -P ${{ secrets.VM_PORT_STAG }} -o StrictHostKeyChecking=no $SOURCE_FILE ${{ secrets.VM_USER_STAG }}@${{ secrets.VM_HOST }}:$DESTINATION_DIR
           scp -r -i key.pem -P ${{ secrets.VM_PORT_STAG }} -o StrictHostKeyChecking=no $PENTAHO_FILE_SOURCE ${{ secrets.VM_USER_STAG }}@${{ secrets.VM_HOST }}:$PENTAHO_FILE_DESTINATION
-          scp -r -i key.pem -P ${{ secrets.VM_PORT_STAG }} -o StrictHostKeyChecking=no $FF4J_FILE_SOURCE ${{ secrets.VM_USER_STAG }}@${{ secrets.VM_HOST }}:$FF4J_FILE_DESTINATION
 
       - name: Build image on server and deploy
         run: ssh -i key.pem -p ${{ secrets.VM_PORT_STAG }} -o StrictHostKeyChecking=no -l ${{ secrets.VM_USER_STAG}} ${{ secrets.VM_HOST }} '/home/mifosstaging/fineract_inkomoko/fineract/build.sh'

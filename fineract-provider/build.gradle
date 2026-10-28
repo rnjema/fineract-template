@@ -274,10 +274,6 @@ jib {
     extraDirectories {
         paths {
             path {
-                from = 'ff4j'
-                into = '/.fineract/ff4j'
-            }
-            path {
                 from = 'pentahoReports'
                 into = '/root/.mifosx/pentahoReports'
             }
