@@ -113,6 +113,7 @@
     <include file="parts/INKO_93_add_portfolio_management_table_report.xml" relativeToChangelogFile="true" />
     <include file="parts/INKO_94_add_ic_minutes_table_report.xml" relativeToChangelogFile="true" />
     <include file="parts/INKO_95_update_topup_report_parameters.xml" relativeToChangelogFile="true" />
+    <include file="parts/inko_39_create_table_for_client_other_info.xml" relativeToChangelogFile="true" />
     <include file="parts/INKO-158-integration-to-transunion-crb.xml" relativeToChangelogFile="true" />
     <include file="parts/INKO_96_update_portfolio_management_and_ic_minutes_report.xml" relativeToChangelogFile="true" />
     <include file="parts/INKO-220-integration-to-metropol-crb-kenya.xml" relativeToChangelogFile="true" />
